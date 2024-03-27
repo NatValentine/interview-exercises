@@ -1,0 +1,15 @@
+{
+  "name": "interview-exercises",
+  "version": "1.0.0",
+  "description": "interview exercises compilation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc -b && node index.js"
+  },
+  "author": "Nat Valentine",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.4.2"
+  }
+}
