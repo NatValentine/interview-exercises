@@ -1,6 +1,5 @@
 // Reverse a string
-// reverse("hello world") => "dlrow olleh"
-function reverse(str:String): String {
+export function reverse(str:String): String {
     let reversed = '';
     for (let char of str) {
         reversed = char + reversed;
@@ -9,33 +8,23 @@ function reverse(str:String): String {
     return reversed;
 }
 
-// console.log(reverse("hello world"));
 
-
-// Reverse an int
-// reverseInt(123) => 321
-function reverseInt(num:number): number {
+// Reverse a number
+export function reverseInt(num:number): number {
     let reversed = num.toString().split('').reverse().join('');
 
     return parseInt(reversed) * Math.sign(num);
 }
 
-// console.log(reverseInt(-123));
-
 
 // Palindrome
-// isPalindrome("hello world") => false
-// isPalindrome("kayak") => true
-function isPalindrome(str:String): boolean {
+export function isPalindrome(str:String): boolean {
     return str === reverse(str);
 }
 
-// console.log(isPalindrome("girafarig"));
-// console.log(isPalindrome("a cavar a caravaca"));
 
 // Most common char
-// mostCommonChar("aaabbbcccc") => 'c'
-function mostCommonChar(str:String): String {
+export function mostCommonChar(str:String): String {
     const charMap = {}
     for (const char of str) {
         charMap[char] = ++charMap[char] || 1;
@@ -52,9 +41,6 @@ function mostCommonChar(str:String): String {
 
     return maxChar;
 }
-
-// console.log(mostCommonChar("abbcccdddd"));
-
 
 
 // Most repeated word
