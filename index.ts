@@ -56,6 +56,39 @@ function mostCommonChar(str:String): String {
 // console.log(mostCommonChar("abbcccdddd"));
 
 
+
+// Most repeated word
+// maxRepeatedWord("hola caracola hola cara hola cola") => {'hola': 3}
+// maxRepeatedWord("hola hola caracola cola cola cara hola cola") => [{'hola': 3}, {'cola', 3}]
+function maxRepeatedWord(str) {
+    const wordMap = {}
+    const words = str.split(" ");
+
+    for (const word of words) {
+        wordMap[word] = ++wordMap[word] || 1;
+    }
+
+    console.log(wordMap);
+
+    let max: number = 0;
+    let maxWords = [];
+    for (const word in wordMap) {
+        if (wordMap[word] > max) {
+            maxWords = [];
+            max = wordMap[word];
+            maxWords.push({ [word]: wordMap[word] });
+        } else if (wordMap[word] === max) {
+            maxWords.push({ [word]: wordMap[word] });
+        }
+    }
+
+    return maxWords;
+}
+
+//console.log(maxRepeatedWord("hola hola caracola cola cola cara hola cola"));
+
+
+
 // Array chunks
 // chunk([1, 2, 3, 4, 5], 2) => [[1, 2], [3, 4], [5]]
 function chunk(array, size) {
@@ -242,4 +275,31 @@ function spiralMatrix(n) {
     return result;
 }
 
-console.log(spiralMatrix(4));
+// console.log(spiralMatrix(4));
+
+
+
+// Fibonacci
+// first n numbers of fibonacci sequence
+// fibonacci(9) => 0 1 1 2 3 5 8 13 21
+function fibonacci(n) {
+    const array = [];
+    for (let i = 0; i < n; i++) {
+        if (i === 0) {
+            array.push(0);
+        } else if (i === 1) {
+            array.push(1);
+        } else { array.push(array[i-1] + array[i-2]); }
+    }
+    return array;
+}
+
+const altFibonacci = (n) =>
+  Array.from({ length: n }).reduce(
+    (prevValue: Array<number>, currentValue: number, i: number) => 
+        prevValue.concat(i > 1 ? prevValue[i - 1] + prevValue[i - 2] : i),
+    []
+  );
+
+//console.log(fibonacci(9));
+//console.log(altFibonacci(9));
