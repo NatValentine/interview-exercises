@@ -132,24 +132,25 @@ export function countVowels(str) {
 
 // Fizz Buzz
 // log numbers from 1 to n. on multiples of 3 print fizz, on multiples of 5 print buzz.
-export function fizzbuzz(n) {
-    for (let i = 1; i < n; i++) {
+export function fizzbuzz(n) { // implemented with array instead of console.log
+    const result: (number | string)[] = [];
+    for (let i = 1; i <= n; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
-            console.log("fizzbuzz");
+            result.push("FizzBuzz");
         } else if (i % 3 === 0) {
-            console.log("fizz");
+            result.push("Fizz");
         } else if (i % 5 === 0) {
-            console.log("buzz");
+            result.push("Buzz");
         } else {
-            console.log(i);
+            result.push(i);
         }
     }
+    return result;
 }
-
-// fizzbuzz(20);
 
 // Steps string pattern
 export function steps(n) {
+    const result = [];
     for (let row = 1; row <= n; row++) {
         let line = '';
         for (let col = 1; col <= n; col++) {
@@ -159,14 +160,14 @@ export function steps(n) {
                 line += ' ';
             }
         }
-        console.log(line);
+        result.push(line);
     }
+    return result;
 }
-
-// steps(4);
 
 // Pyramid string pattern
 export function pyramid(n) {
+    const result = [];
     const mid = Math.floor((2 * n - 1) / 2);
     for (let row = 0; row < n; row++) {
         let line = '';
@@ -177,11 +178,10 @@ export function pyramid(n) {
                 line += ' ';
             }
         }
-        console.log(line);
+        result.push(line);
     }
+    return result;
 }
-
-// pyramid(5);
 
 // Spiral matrix
 // a function that accepts an integer n and returns a nxn spiral matrix.
@@ -226,11 +226,9 @@ export function spiralMatrix(n) {
     return result;
 }
 
-// console.log(spiralMatrix(4));
+console.log(spiralMatrix(4));
 
 // Fibonacci
-// first n numbers of fibonacci sequence
-// fibonacci(9) => 0 1 1 2 3 5 8 13 21
 export function fibonacci(n) {
     const array = [];
     for (let i = 0; i < n; i++) {

@@ -1,4 +1,4 @@
-import { capitalize, chunk, countVowels, isAnagram, isPalindrome, maxRepeatedWord, mostCommonChar, reverse, reverseInt } from ".";
+import { capitalize, chunk, countVowels, fibonacci, fizzbuzz, isAnagram, isPalindrome, maxRepeatedWord, mostCommonChar, pyramid, reverse, reverseInt, spiralMatrix, steps } from ".";
 
 describe('Reverse a string', () => {
     test('hello world reversed is dlrow olleh', () => {
@@ -66,3 +66,44 @@ describe('Counting vowels', () => {
     })
 });
 
+describe('FizzBuzz', () => {
+    test('from 1 to n: on multiples of 3 print fizz, on multiples of 5 print buzz', () => {
+        expect(fizzbuzz(15)).toEqual(
+            [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']);
+    })
+});
+
+describe('Steps', () => {
+    test('generate a steps pattern with n levels', () => {
+        expect(steps(4)).toEqual(
+            ['#   ', '##  ', '### ', '####']);
+    })
+});
+
+describe('Pyramid', () => {
+    test('generate a pyramid pattern with n levels', () => {
+        expect(pyramid(3)).toEqual(
+            ['  #  ', ' ### ', '#####']);
+    })
+});
+
+describe('Spiral matrix', () => {
+    test('generate a nxn spiral matrix', () => {
+        expect(spiralMatrix(4)).toEqual(
+            [
+              [  1,  2,  3, 4 ],
+              [ 12, 13, 14, 5 ],
+              [ 11, 16, 15, 6 ],
+              [ 10,  9,  8, 7 ]
+            ]
+        )
+    })
+});
+
+describe('Fibonacci', () => {
+    test('returns first 9 elements of the Fibonacci sequence', () => {
+        expect(fibonacci(9)).toEqual(
+            [0, 1, 1, 2, 3, 5, 8, 13, 21]
+        )
+    })
+})
